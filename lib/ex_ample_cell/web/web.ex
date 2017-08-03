@@ -22,6 +22,8 @@ defmodule ExAmpleCell.Web do
       import Plug.Conn
       import ExAmpleCell.Web.Router.Helpers
       import ExAmpleCell.Web.Gettext
+
+      import ExCell.Controller
     end
   end
 
@@ -39,6 +41,25 @@ defmodule ExAmpleCell.Web do
       import ExAmpleCell.Web.Router.Helpers
       import ExAmpleCell.Web.ErrorHelpers
       import ExAmpleCell.Web.Gettext
+
+      import ExCell.View
+    end
+  end
+
+  def cell(opts \\ []) do
+    quote do
+      use ExCell.Cell, namespace: ExAmpleCell.Web
+
+      use Phoenix.View, root: "lib/ex_ample_cell/cells",
+                        path: ExCell.View.relative_path(__MODULE__, ExAmpleCell.Web)
+
+      import Phoenix.Controller,
+             only: [get_csrf_token: 0, get_flash: 2, view_module: 1]
+
+      use Phoenix.HTML
+
+      import ExAmpleCell.Router.Helpers
+      import ExAmpleCell.Gettext
     end
   end
 
