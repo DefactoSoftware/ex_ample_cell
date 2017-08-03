@@ -1,0 +1,49 @@
+.JumbotronCell {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  color: inherit;
+  background-color: #eee;
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.JumbotronCell .h1,
+.JumbotronCell h1 {
+  color: inherit;
+}
+
+.JumbotronCell p {
+  margin-bottom: 15px;
+  font-size: 21px;
+  font-weight: 200;
+}
+.JumbotronCell > hr {
+  border-top-color: #d5d5d5;
+}
+
+.container .JumbotronCell,
+.container-fluid .JumbotronCell {
+  border-radius: 6px;
+}
+
+.JumbotronCell .container {
+  max-width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .JumbotronCell {
+    padding-top: 48px;
+    padding-bottom: 48px;
+    border-bottom: 0;
+  }
+  .container .JumbotronCell,
+  .container-fluid .JumbotronCell {
+    padding-right: 60px;
+    padding-left: 60px;
+  }
+  .JumbotronCell .h1,
+  .JumbotronCell h1 {
+    font-size: 63px;
+  }
+}
