@@ -1,10 +1,7 @@
-<div class="jumbotron">
-  <h2><%= gettext "Welcome to %{name}!", name: "Phoenix" %></h2>
-  <p class="lead">A productive web framework that<br />does not compromise speed and maintainability.</p>
-</div>
+<%= cell(ExAmpleCell.Web.JumbotronCell) %>
 
-<div class="row marketing">
-  <div class="col-lg-6">
+<%= cell(ExAmpleCell.Web.BlockCell, class: "marketing") do %>
+  <%= cell(ExAmpleCell.Web.ColumnCell) do %>
     <h4>Resources</h4>
     <ul>
       <li>
@@ -17,9 +14,9 @@
         <a href="https://github.com/phoenixframework/phoenix">Source</a>
       </li>
     </ul>
-  </div>
+  <%= end %>
 
-  <div class="col-lg-6">
+  <%= cell(ExAmpleCell.Web.ColumnCell) do %>
     <h4>Help</h4>
     <ul>
       <li>
@@ -32,5 +29,5 @@
         <a href="https://twitter.com/elixirphoenix">@elixirphoenix</a>
       </li>
     </ul>
-  </div>
-</div>
+  <% end %>
+<% end %>

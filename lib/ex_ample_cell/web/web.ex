@@ -50,7 +50,7 @@ defmodule ExAmpleCell.Web do
     quote do
       use ExCell.Cell, namespace: ExAmpleCell.Web
 
-      use Phoenix.View, root: "lib/ex_ample_cell/cells",
+      use Phoenix.View, root: "lib/ex_ample_cell/web/cells",
                         path: ExCell.View.relative_path(__MODULE__, ExAmpleCell.Web)
 
       import Phoenix.Controller,
@@ -58,8 +58,8 @@ defmodule ExAmpleCell.Web do
 
       use Phoenix.HTML
 
-      import ExAmpleCell.Router.Helpers
-      import ExAmpleCell.Gettext
+      import ExAmpleCell.Web.Router.Helpers
+      import ExAmpleCell.Web.Gettext
     end
   end
 

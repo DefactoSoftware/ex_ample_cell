@@ -1,0 +1,3 @@
+<%= container(class: "col-lg-6") do %>
+  <%= assigns[:children] %>
+<% end %>

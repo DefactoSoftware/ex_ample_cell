@@ -1,0 +1,3 @@
+<%= container(class: [assigns[:class], "row"]) do %>
+  <%= assigns[:children] %>
+<% end %>
