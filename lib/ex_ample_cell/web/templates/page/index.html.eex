@@ -1,4 +1,4 @@
-<%= cell(ExAmpleCell.Web.JumbotronCell) %>
+<%= cell(ExAmpleCell.Web.JumbotronCell, name: "Phoenix") %>
 
 <%= cell(ExAmpleCell.Web.BlockCell, class: "marketing") do %>
   <%= cell(ExAmpleCell.Web.ColumnCell) do %>
