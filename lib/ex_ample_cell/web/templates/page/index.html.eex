@@ -3,31 +3,25 @@
 <%= cell(ExAmpleCell.Web.BlockCell, class: "marketing") do %>
   <%= cell(ExAmpleCell.Web.ColumnCell) do %>
     <h4>Resources</h4>
-    <ul>
-      <li>
-        <a href="http://phoenixframework.org/docs/overview">Guides</a>
-      </li>
-      <li>
-        <a href="https://hexdocs.pm/phoenix">Docs</a>
-      </li>
-      <li>
-        <a href="https://github.com/phoenixframework/phoenix">Source</a>
-      </li>
-    </ul>
+    <%= cell(
+      ExAmpleCell.Web.LinksCell,
+      links: %{
+        "Guides" => "http://phoenixframework.org/docs/overview",
+        "Docs" => "https://hexdocs.pm/phoenix",
+        "Source" => "https://github.com/phoenixframework/phoenix"
+      })
+    %>
   <%= end %>
 
   <%= cell(ExAmpleCell.Web.ColumnCell) do %>
     <h4>Help</h4>
-    <ul>
-      <li>
-        <a href="http://groups.google.com/group/phoenix-talk">Mailing list</a>
-      </li>
-      <li>
-        <a href="http://webchat.freenode.net/?channels=elixir-lang">#elixir-lang on freenode IRC</a>
-      </li>
-      <li>
-        <a href="https://twitter.com/elixirphoenix">@elixirphoenix</a>
-      </li>
-    </ul>
+    <%= cell(
+      ExAmpleCell.Web.LinksCell,
+      links: %{
+        "Mailing list" => "http://groups.google.com/group/phoenix-talk",
+        "#elixir-lang on freenode IRC" => "http://webchat.freenode.net/?channels=elixir-lang",
+        "@elixirphoenix" => "https://twitter.com/elixirphoenix"
+      })
+    %>
   <% end %>
 <% end %>

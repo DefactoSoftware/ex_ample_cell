@@ -1,0 +1,7 @@
+<%= container(tag: :ul) do %>
+  <%= for {link, url} <- @links do %>
+    <li>
+      <a href="<%= url %>"><%= link %></a>
+    </li>
+  <% end %>
+<% end %>
