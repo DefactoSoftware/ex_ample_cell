@@ -6,13 +6,17 @@
     "watch": "brunch watch --stdin"
   },
   "dependencies": {
-    "phoenix": "file:../deps/phoenix",
-    "phoenix_html": "file:../deps/phoenix_html"
+    "babel-brunch": "^6.1.1",
+    "cells-js": "0.0.15",
+    "phoenix": "file:deps/phoenix",
+    "phoenix_html": "file:deps/phoenix_html"
   },
   "devDependencies": {
-    "babel-brunch": "6.0.6",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-stage-0": "^6.24.1",
     "brunch": "2.10.7",
     "clean-css-brunch": "2.10.0",
+    "glob": "^7.1.2",
     "uglify-js-brunch": "2.1.1"
   }
 }

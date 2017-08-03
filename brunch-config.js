@@ -1,3 +1,6 @@
+const glob = require("glob");
+const path = require("path");
+
 exports.config = {
   // See http://brunch.io/#documentation for docs.
   files: {
@@ -38,27 +41,31 @@ exports.config = {
   paths: {
     // Dependencies and current project directories to watch
     watched: [
-      "static",
-      "css",
-      "js",
-      "vendor",
-      "../lib/ex_ample_cell/web/cells/"
+      "assets/static",
+      "assets/css",
+      "assets/js",
+      "assets/vendor",
+      "lib/ex_ample_cell/web/cells/"
     ],
     // Where to compile files to
-    public: "../priv/static"
+    public: "priv/static"
   },
 
   // Configure your plugins
   plugins: {
     babel: {
       // Do not use ES6 compiler in vendor code
-      ignore: [/vendor/]
+      ignore: [/vendor/],
+      presets: ["env", "stage-0"]
     }
   },
 
   modules: {
     autoRequire: {
-      "js/app.js": ["js/app"]
+      "js/app.js": glob
+        .sync("lib/ex_ample_cell/web/cells/**/*.js")
+        .map(f => path.dirname(f))
+        .concat(["assets/js/app"])
     }
   },
 
